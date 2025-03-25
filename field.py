@@ -1,8 +1,6 @@
 import constants
 import random
 
-from rabbit import Rabbit
-
 
 class Field:
     def __init__(self, width: int, height: int, rabbit_quantity: int, tiger_quantity: int):
@@ -26,6 +24,9 @@ class Field:
                 print(self.matrix[i][j], end=" ")
 
     def place_rabbits_randomly(self):
+        # Import Rabbit here
+        from rabbit import Rabbit
+
         for i in range(self.rabbit_quantity):
             while True:
                 x = random.randint(0, self.width - 1)
@@ -34,3 +35,4 @@ class Field:
                     continue
                 self.matrix[y][x] = constants.RABBIT
                 self.rabbits[i] = Rabbit(x, y)
+                break # Добавил break, чтобы выйти из бесконечного цикла

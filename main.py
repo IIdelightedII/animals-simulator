@@ -2,7 +2,7 @@ from field import Field
 
 
 def main():
-    field = Field(3, 10, 2, 2)
+    field = Field(3, 10, 5, 2)
     field.place_rabbits_randomly()
     field.display()
 
